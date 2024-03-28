@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+	<body>
+		
+
+		<img src="/img" /> <br />
+        <button id="btn">Login</button>
+        <select value="none">
+			<option  value="lax" name="lax" id="laxl">lax</option
+				><option value="none" name="none" selected id="none">none</option
+					><option value="strict" name="strict" id="strict">strict
+					</option>
+				</select>
+			</body>
+				
+        <script>
+            const btn = document.getElementById('btn');
+            btn.addEventListener('click', (e) => {
+				const cookieType = document.querySelector('select').value;
+				console.log({cookieType})
+                fetch(`/login?cookie_type=${cookieType}`, { 'method': 'POST' })
+                    .then((a) => a.text())
+                    .then(console.log);
+            });
+        </script>
+    </body>
+</html>
