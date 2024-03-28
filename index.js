@@ -1,4 +1,6 @@
+require('dotenv/config');
 const app = require("express")()
+
 
 app.post("/", (req, res) => {
 
@@ -33,4 +35,6 @@ app.get("/img", (req, res) => {
     }
 })
 
-app.listen(8080, () => console.log("listening on port 8080"))
+const PORT = process.env.PORT || 8080
+
+app.listen(PORT, () => console.log(`listening on port ${PORT}`))
